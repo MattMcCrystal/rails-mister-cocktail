@@ -1,6 +1,11 @@
 <h2><%= @cocktail.name %></h2>
 
-<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @cocktail.photo.attached?
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+        <%= cl_image_tag("https://res.cloudinary.com/mattymccrystal/image/upload/v1599196761/elpcsuoz9gyeae3h5zch.jpg", height: 300, width: 400, crop: :fill) %>
+    <% end %>
+        
 
 <ul>
 <% @cocktail.doses.each do |dose|%>
