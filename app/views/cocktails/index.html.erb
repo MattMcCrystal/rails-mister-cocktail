@@ -1,5 +1,7 @@
 <h1>Cocktail List</h1>
 
+<%= cl_image_tag("https://res.cloudinary.com/mattymccrystal/image/upload/v1599196772/ajeqbdq1rsvkkwofrycd.jpg",
+      width: 400, height: 300, crop: :FILL) %>
 
 <% @cocktails.each do |cocktail| %>
 
@@ -8,3 +10,9 @@
 <% end %>
 
 <%= link_to "Add New Cocktail", new_cocktail_path%>
+
+
+
+<!-- for face detection -->
+<%# <%= cl_image_tag("IMAGE_WITH_FACE_ID",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
